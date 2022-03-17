@@ -7,6 +7,7 @@
 #include "include/BubbleSort.h"
 #include "include/InsertionSort.h"
 #include "include/SelectionSort.h"
+#include "include/QuickSort.h"
 
  using namespace std;
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
@@ -16,8 +17,10 @@ int main(int argc, char** argv) {
 	int value=133;
 	int power=0;
 	int arr[]={1,-5,0,2,7,6,-12,8,3,-20,-2,8,9,50};
-	//int arr2[]={1,2,4,6,7,8,20};
+
 	int length=sizeof(arr)/sizeof(arr[0]);
+	int low=0;
+	int high=length-1;
 //	FindIndexOfFirstOccurenceOf findIndexOfFirstOccurenceOf(value,arr,sizeof(arr)/sizeof(arr[0])); 
 //	BinarySearch binarySearch(value,arr,sizeof(arr)/sizeof(arr[0]));
 //	SumOfDigitsInNumber sumOfDigitsInNumber(value); 
@@ -28,8 +31,10 @@ int main(int argc, char** argv) {
 	for(int i=0;i<length;i++){
 		cout<<arr[i]<<",";
 	}
-	SelectionSort selectionSort(arr,length);
+	
+	QuickSort quickSort(arr,low,high);
 	cout<<endl;
+	
 	for(int i=0;i<length;i++){
 		cout<<arr[i]<<",";
 	}
